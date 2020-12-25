@@ -18,17 +18,16 @@ export default function App() {
    * @param {String} type destination mailbox type
    */
   const handleDrop = ({ item }, type) => {
-    debugger;
     let temp = Object.assign({}, allItems);
 
     //Remove item from Original Mail Array
     temp[item.type] = temp[item.type].filter((data) => data.id !== item.id);
-    console.log("new allItems before pushing", temp);
+    //console.log("new allItems before pushing", temp);
 
     //Push dragged item to designated mailType
     item.type = type;
     temp[type].push(item);
-    console.log("new allItems after pushing", temp);
+    //console.log("new allItems after pushing", temp);
     setAllItems(temp);
   };
 
