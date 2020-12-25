@@ -12,12 +12,11 @@ export default function SidebarItem({ children, handleDrop, type }) {
     }),
   });
 
-  const isActive = isOver && canDrop;
   return (
     <div
       className="sidebar-item"
       ref={drop}
-      style={isActive ? { backgroundColor: "lightgreen" } : {}}
+      style={canDrop ? { backgroundColor: "lightgreen" } : {}}
     >
       {children}
     </div>
