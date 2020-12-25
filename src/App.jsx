@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Drafts from "./pages/Drafts";
@@ -13,7 +13,7 @@ export default function App() {
   const [allItems, setAllItems] = useState(mailItemsList);
 
   /**
-   *
+   * @description Function to handle Drop of mail item
    * @param {Object} item  Item which is dragged from mailbox
    * @param {String} type destination mailbox type
    */
@@ -22,7 +22,7 @@ export default function App() {
     let temp = Object.assign({}, allItems);
 
     //Remove item from Original Mail Array
-    temp[item.type] = temp[item.type].filter((data) => data.id != item.id);
+    temp[item.type] = temp[item.type].filter((data) => data.id !== item.id);
     console.log("new allItems before pushing", temp);
 
     //Push dragged item to designated mailType
