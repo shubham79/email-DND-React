@@ -1,5 +1,4 @@
 import React from "react";
-import randomId from "random-id";
 import MailList from "../components/MailList";
 
 export default function Drafts({ allItems }) {
